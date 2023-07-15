@@ -15,7 +15,7 @@ ssh_conn_id = 'prosclbt00c'
 dag = DAG('A3_Acceso_Batch',
            description="Conexion remota prosclbt00c",
            schedule=timedelta(minutes=30),
-           start_date=datetime(2023, 5, 28, 2, 00, 00, tzinfo=local_tz),
+           start_date=datetime(2023, 7, 15, 17, 00, 00, tzinfo=local_tz),
            catchup=False,
            tags=["prosclbt00c"],
 
@@ -23,9 +23,9 @@ dag = DAG('A3_Acceso_Batch',
 
 # Define the SSHOperator
 Suplantacion_xpbatch = SSHOperator(
-    task_id='Suplanta_xpbatch',
+    task_id='prueba de conexion',
     ssh_conn_id=ssh_conn_id,
-    command='date;hostname;pwd;sh conexion.sh; id',
+    command='date;hostname;pwd;id',
 	dag=dag,
 )
 
