@@ -23,7 +23,7 @@ dag = DAG('A3_Acceso_Batch',
 
 # Define the SSHOperator
 Suplantacion_xpbatch = SSHOperator(
-    task_id='prueba de conexion',
+    task_id='prueba_de_conexion',
     ssh_conn_id=ssh_conn_id,
     command='date;hostname;pwd;id',
 	dag=dag,
