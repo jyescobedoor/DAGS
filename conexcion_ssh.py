@@ -15,7 +15,7 @@ ssh_conn_id = 'reportes'
 dag = DAG('A2_conexion_ssh',
            description="Conexion remota reportes",
            schedule=timedelta(minutes=30),
-           start_date=datetime(2023,5,28, 2,00,00, tzinfo=local_tz),
+           start_date=datetime(2023,7,15, 17,00,00, tzinfo=local_tz),
            catchup=False,
            tags=["conexion_sss"],
 
