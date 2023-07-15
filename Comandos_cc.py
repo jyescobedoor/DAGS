@@ -16,7 +16,7 @@ with DAG(
     "A1_relacion_tareas",
     description="mi primer DAG",
     schedule=timedelta(minutes= 30),
-    start_date=datetime(2023, 5, 28, 2, 00, 00, tzinfo=local_tz),
+    start_date=datetime(2023, 7, 15, 17, 00, 00, tzinfo=local_tz),
     catchup=False,
     tags=["practica"],
 ) as dag:
@@ -29,7 +29,7 @@ with DAG(
 
     t2 = BashOperator(
         task_id="mensaje",
-        bash_command="echo Implementacion Airflow Telefonica 2023 ",
+        bash_command="echo retoma Implementacion Airflow Telefonica 2023 ",
      )
     
     templated_command = dedent(
