@@ -29,7 +29,7 @@ with DAG(
 
     t2 = BashOperator(
         task_id="mensaje",
-        bash_command="pruebas para rolon ",
+        bash_command="echo pruebas para rolon ",
      )
     
     templated_command = dedent(
