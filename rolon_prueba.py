@@ -13,7 +13,7 @@ from airflow import DAG
 # Operators; we need this to operate!
 from airflow.operators.bash import BashOperator
 with DAG(
-    "rolon_pruebas",
+    "rolon",
     description="mi primer DAG",
     schedule=timedelta(minutes= 30),
     start_date=datetime(2023, 7, 16, 14, 00, 00, tzinfo=local_tz),
