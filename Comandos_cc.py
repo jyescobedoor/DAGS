@@ -15,7 +15,7 @@ from airflow.operators.bash import BashOperator
 with DAG(
     "A1_relacion_tareas",
     description="mi primer DAG",
-    schedule=timedelta(minutes= 30),
+    schedule=timedelta(days=1),
     start_date=datetime(2023, 7, 15, 17, 00, 00, tzinfo=local_tz),
     catchup=False,
     tags=["practica"],
