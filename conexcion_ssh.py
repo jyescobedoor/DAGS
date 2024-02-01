@@ -25,7 +25,7 @@ dag = DAG('A2_conexion_ssh',
 ssh_task = SSHOperator(
     task_id='ssh_command_task',
     ssh_conn_id=ssh_conn_id,
-    command='pwd',
+    command='id',
     dag=dag,
 )
 
