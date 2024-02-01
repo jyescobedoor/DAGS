@@ -16,35 +16,27 @@ with DAG(
     "A1_relacion_tareas",
     description="mi primer DAG",
     schedule=timedelta(days=1),
-    start_date=datetime(2023, 7, 15, 17, 00, 00, tzinfo=local_tz),
+    start_date=datetime(2024, 1, 2, 00, 00, 00, tzinfo=local_tz),
     catchup=False,
-    tags=["practica"],
+    tags=["jorge"],
 ) as dag:
 
     # t1, t2 and t3 are examples of tasks created by instantiating operators
     t1 = BashOperator(
-        task_id="fecha",
+        task_id="Fecha",
         bash_command="date",
     )
 
     t2 = BashOperator(
-        task_id="mensaje",
-        bash_command="echo retoma Implementacion Airflow Telefonica 2023 ",
+        task_id="Mensaje",
+        bash_command="echo Pruebas Implementacion Airflow Telefonica 2024 ",
      )
     
-    templated_command = dedent(
-        """
-    {% for i in range(5) %}
-        echo "{{ ds }}"
-        echo "{{ macros.ds_add(ds, 7)}}"
-    {% endfor %}
-    """
-    )
+
 
     t3 = BashOperator(
-        task_id="plantilla",
-        depends_on_past=False,
-        bash_command=templated_command,
+        task_id="Ruta",
+        bash_command="pwd"
     )
 
     t1 >> [t2, t3]
