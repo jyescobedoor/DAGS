@@ -17,7 +17,7 @@ dag = DAG('A3_Acceso_Batch',
            schedule=timedelta(minutes=30),
            start_date=datetime(2023, 7, 15, 17, 00, 00, tzinfo=local_tz),
            catchup=False,
-           tags=["prosclbt00c"],
+           tags=["preportes"],
 
 )
 
