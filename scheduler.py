@@ -12,9 +12,8 @@ local_tz = pendulum.timezone("America/Bogota")
 
 dag = DAG('scheduler',
            description="pruebas inicio automatico de tareas",
-           start_date=datetime(2024, 2, 7, 11, 59, 00, tzinfo=local_tz),
-           schedule_interval="0,10,20,30,40,50 * * * *",
-           #schedule=timedelta(minutes=3),      
+           start_date=datetime(2024, 3, 3, 00, 00, 00, tzinfo=local_tz),
+           schedule_interval="20 * * * *",
            catchup=False,
            tags=["pruebas"],
 )
@@ -22,10 +21,8 @@ dag = DAG('scheduler',
 # Define the SSHOperator
 Tarea1= BashOperator(
     task_id='Valida_conexion',
- #  ssh_conn_id=ssh_conn_id,
     bash_command='date;hostname;pwd;',
     dag=dag,
 )
 
 # Set the task dependencies
-Tarea1
