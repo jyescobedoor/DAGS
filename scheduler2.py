@@ -13,7 +13,7 @@ local_tz = pendulum.timezone("America/Bogota")
 dag = DAG('scheduler',
            description="pruebas inicio automatico de tareas",
            start_date=datetime(2024, 3, 4, 3, 00, 00, tzinfo=local_tz),
-           schedule_interval="10 * * * *",
+           schedule_interval="30 * * * *",
            catchup=False,
            tags=["pruebas"],
 )
