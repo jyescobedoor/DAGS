@@ -26,7 +26,7 @@ dag = DAG(
 comando_remoto='id;date;echo prueba de conexion remota a reportes ok'
 
 # Define the SSHOperator
-Tarea1 = SSHOperator(
+Tarea1 = BashOperator(
     task_id="partitionCDRtol",
     #ssh_conn_id=ssh_conn_id, # Define tu conexión SSH en Airflow
     command=comando_remoto,
