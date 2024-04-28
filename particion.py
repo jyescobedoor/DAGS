@@ -23,7 +23,7 @@ dag = DAG(
 )
 
 #Define comando a ejecutar
-comando_remoto='echo Inicia Proceso; sleep 60 ;echo Finaliza Ejecucion del Proceso'
+comando_remoto='id;date;echo prueba de conexion remota a reportes ok'
 
 # Define the SSHOperator
 Tarea1 = SSHOperator(
