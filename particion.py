@@ -23,7 +23,7 @@ dag = DAG(
 )
 
 #Define comando a ejecutar
-comando_remoto='id;date;echo prueba de conexion remota a reportes ok'
+comando_remoto='date;id;df -k;'
 
 # Define the SSHOperator
 Tarea1 = BashOperator(
