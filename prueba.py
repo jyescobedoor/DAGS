@@ -16,5 +16,5 @@ dag = DAG(
     catchup=False,
     tags=["pruebas"],
 )
-op = BashOperator(task_id="hello_world", bash_command="echo Hello World!", dag=dag)
+op = BashOperator(task_id="hello_world", bash_command="echo Hello World!", dag=DAG)
 print(op.retries)  # 3
