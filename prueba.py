@@ -9,12 +9,11 @@ from airflow.operators.bash import BashOperator
 local_tz = pendulum.timezone("America/Bogota")
 
 dag = DAG(
-    "My_dag",
-    description="prueba dag",
-    start_date=datetime(2024, 5, 4, 00, 00, 00, tzinfo=local_tz),
-    schedule_interval="	0,10,20,30,40,50 * * * *",
+    dag_id="my_dag",
+    start_date=pendulum.datetime(2024, 5, 4),
+    schedule="@daily",
+    default_args={"retries": 2},
     catchup=False,
-    tags=["pruebas"],
 )
-op = BashOperator(task_id="hello_world", bash_command="Hello World!", dag=dag)
-print(op.retries)  # 3
+op = BashOperator(task_id="hello_world", bash_command="Hello World!")
+print(op.retries)  # 2
