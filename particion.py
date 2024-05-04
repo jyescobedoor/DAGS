@@ -3,8 +3,8 @@ from datetime import datetime
 # Import the Pendulum library.
 import pendulum
 from airflow import DAG
-from airflow.contrib.operators import SSHOperator
-from airflow.operators.bash import BashOperator
+from airflow.contrib.operators.ssh_operator import SSHOperator
+from airflow.operators.bash_operator import BashOperator
 
 # Instantiate Pendulum and set your timezone.
 local_tz = pendulum.timezone("America/Bogota")
@@ -26,7 +26,7 @@ dag = DAG(
 comando_remoto='date;id;df -k;'
 
 # Define the SSHOperator
-Tarea1 = SSHOperator(
+Tarea1 = BashOperator(
     task_id="partitionCDRtol",
     #ssh_conn_id=ssh_conn_id, # Define tu conexión SSH en Airflow
     bash_command=comando_remoto,
