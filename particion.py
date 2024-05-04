@@ -3,8 +3,8 @@ from datetime import datetime
 # Import the Pendulum library.
 import pendulum
 from airflow import DAG
-from airflow.contrib.operators.ssh_operator import SSHOperator
-from airflow.operators.bash_operator import BashOperator
+from airflow.contrib.operators import SSHOperator
+from airflow.operators import BashOperator
 
 # Instantiate Pendulum and set your timezone.
 local_tz = pendulum.timezone("America/Bogota")
