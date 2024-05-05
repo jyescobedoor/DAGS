@@ -13,7 +13,7 @@ with DAG('dag_dependiente', start_date=days_ago(1), schedule_interval='@daily') 
         task_id='wait_for_task_1',
         external_dag_id='dag_principal',  # ID del DAG que estás esperando
         external_task_id='task_1',  # ID de la tarea que estás esperando
-        states=['success'],  # Estado que se requiere para proceder
+        allowed_states=['success'],  # Estado que se requiere para proceder
         timeout=30,  # Tiempo de espera en segundos
     )
 
