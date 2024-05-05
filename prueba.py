@@ -12,7 +12,7 @@ dag = DAG(
     "My_dag",
     description="prueba dag",
     start_date=datetime(2024, 5, 4, 00, 00, 00, tzinfo=local_tz),
-    schedule_interval="	50 * * * *",
+    schedule_interval="	58 * * * *",
     catchup=False,
     tags=["pruebas"],
 )
