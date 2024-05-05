@@ -1,14 +1,20 @@
+# Import the Pendulum library.
+import pendulum
+from datetime import datetime
 from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.sensors.external_task import ExternalTaskSensor
 from airflow.utils.dates import days_ago
 
+# Instantiate Pendulum and set your timezone.
+local_tz = pendulum.timezone("America/Bogota")
+
 # DAG principal
-with DAG('dag_principal', start_date=days_ago(1), schedule_interval='5 * * * *') as dag1:
+with DAG('dag_principal', start_date=datetime(2024, 4, 27, 00, 00, 00, tzinfo=local_tz), schedule_interval='5 * * * *',catchup=False,) as dag1:
     task1 = DummyOperator(task_id='task_1')
 
 # DAG dependiente
-with DAG('dag_dependiente', start_date=days_ago(1), schedule_interval='7 * * * *') as dag2:
+with DAG('dag_dependiente', start_date=datetime(2024, 4, 27, 00, 00, 00, tzinfo=local_tz), schedule_interval='7 * * * *',catchup=False,) as dag2:
     wait_for_task_1 = ExternalTaskSensor(
         task_id='wait_for_task_1',
         external_dag_id='dag_principal',  # ID del DAG que estás esperando
