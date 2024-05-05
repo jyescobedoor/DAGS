@@ -28,7 +28,7 @@ wait_for_task_1 = ExternalTaskSensor(
         external_dag_id='My_dag',  # ID del DAG que estás esperando
         external_task_id='hello_world',  # ID de la tarea que estás esperando
         allowed_states=['success'],  # Estado que se requiere para proceder
-        timeout=None,  # Tiempo de espera en segundos
+        timeout=5600,  # Tiempo de espera en segundos
         dag=dag,
     )
 
