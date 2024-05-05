@@ -4,11 +4,11 @@ from airflow.sensors.external_task import ExternalTaskSensor
 from airflow.utils.dates import days_ago
 
 # DAG principal
-with DAG('dag_principal', start_date=days_ago(1), schedule_interval='@daily') as dag1:
+with DAG('dag_principal', start_date=days_ago(1), schedule_interval='5 * * * *') as dag1:
     task1 = DummyOperator(task_id='task_1')
 
 # DAG dependiente
-with DAG('dag_dependiente', start_date=days_ago(1), schedule_interval='@daily') as dag2:
+with DAG('dag_dependiente', start_date=days_ago(1), schedule_interval='7 * * * *') as dag2:
     wait_for_task_1 = ExternalTaskSensor(
         task_id='wait_for_task_1',
         external_dag_id='dag_principal',  # ID del DAG que estás esperando
