@@ -20,7 +20,7 @@ with DAG('dag_dependiente', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=l
         external_dag_id='dag_principal',  # ID del DAG que estás esperando
         external_task_id='task_1',  # ID de la tarea que estás esperando
         allowed_states=['success'],  # Estado que se requiere para proceder
-        timeout=10,  # Tiempo de espera en segundos
+        timeout=300,  # Tiempo de espera en segundos
 
     )
 
