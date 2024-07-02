@@ -34,4 +34,4 @@ with DAG('dag_dependiente', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=l
     task4 = DummyOperator(task_id='task_4')
 
 
-    wait_for_task_3 >> task1 >> [task2,task3,task4]
+    wait_for_task_3 >> task1 >> [task2]
