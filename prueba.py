@@ -8,7 +8,7 @@ from airflow.operators.bash import BashOperator
 
 local_tz = pendulum.timezone("America/Bogota")
 
-dag = DAG(
+#dag = DAG(
     "My_dag",
     description="prueba dag",
     start_date=datetime(2024, 5, 4, 00, 00, 00, tzinfo=local_tz),
