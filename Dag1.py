@@ -14,7 +14,7 @@ with DAG('dag_principal', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=loc
     task1 = DummyOperator(task_id='task_1')
 
 # DAG dependiente
-with DAG('dag_dependiente', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=local_tz), schedule_interval='7 * * * *',catchup=False,) as dag2:
+with DAG('dag_dependiente', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=local_tz), schedule_interval='5 * * * *',catchup=False,) as dag2:
     wait_for_task_1 = ExternalTaskSensor(
         task_id='wait_for_task_1',
         external_dag_id='dag_principal',  # ID del DAG que estás esperando
