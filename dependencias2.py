@@ -43,7 +43,7 @@ wait_for_dag1 = ExternalTaskSensor(
     external_dag_id='dag1',
     external_task_id='end_task',
     dag=dag2,
-    mode='poke',  # puedes usar 'reschedule' también
+    mode='reschedule',  # puedes usar 'poke' también
 )
 
 start_task_dag2 = DummyOperator(
