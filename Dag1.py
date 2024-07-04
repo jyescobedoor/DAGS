@@ -26,7 +26,7 @@ with DAG('dag_dependiente', start_date=datetime(2024, 7, 1, 00, 00, 00, tzinfo=l
         allowed_states=['success'],  # Estado que se requiere para proceder
         timeout=600,  # Tiempo de espera en segundos
         mode='reschedule',
-        reschedule_interval=60,
+        
     )
 
     task1 = DummyOperator(task_id='task_1')
