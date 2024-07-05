@@ -10,7 +10,7 @@ from airflow.utils.dates import days_ago
 local_tz = pendulum.timezone("America/Bogota")
 
 # DAG principal
-with DAG('dag_principal', start_date=days_ago(1), tzinfo=local_tz, schedule_interval='5,15,25,35,45,55 * * * *',catchup=False,) as dag1:
+with DAG('dag_principal', start_date=days_ago(1),schedule_interval='5,15,25,35,45,55 * * * *',catchup=False,) as dag1:
     task1 = DummyOperator(task_id='task_1')
     task2 = DummyOperator(task_id='task_2')
     task3 = DummyOperator(task_id='task_3')
@@ -18,7 +18,7 @@ with DAG('dag_principal', start_date=days_ago(1), tzinfo=local_tz, schedule_inte
 
 
 # DAG dependiente
-with DAG('dag_dependiente', start_date=days_ago(1), tzinfo=local_tz, schedule_interval='00,10,20,30,40,50 * * * *',catchup=False,) as dag2:
+with DAG('dag_dependiente', start_date=days_ago(1),schedule_interval='00,10,20,30,40,50 * * * *',catchup=False,) as dag2:
     wait_for_task_3 = ExternalTaskSensor(
         task_id='wait_for_task_3',
         external_dag_id='dag_principal',  # ID del DAG que estás esperando

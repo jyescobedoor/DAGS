@@ -35,7 +35,8 @@ default_args = {
 dag2 = DAG(
     'dag2',
     default_args=default_args,
-    schedule_interval='10,15,20 * * * *'
+    schedule_interval='10,15,20 * * * *',
+    cachup=False,
 )
 wait_for_dag1 = ExternalTaskSensor(
     task_id='wait_for_dag1',
