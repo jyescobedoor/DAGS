@@ -25,7 +25,7 @@ with DAG('dag_dependiente', start_date=days_ago(1),schedule_interval='00,10,20,3
         external_task_id='task_3',  # ID de la tarea que estás esperando
         allowed_states=['success'],  # Estado que se requiere para proceder
         mode='reschedule',
-        reschedule_interval=60,
+        poke_interval=60,
         
     )
 
