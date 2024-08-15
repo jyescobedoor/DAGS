@@ -29,8 +29,10 @@ dag = DAG(
 Tarea1 = BashOperator(
     task_id="Valida_conexion",
     #ssh_conn_id=ssh_conn_id, # Define tu conexión SSH en Airflow
-    command="date",
+    bash_command="date",
     #conn_timeout = None,
     #cmd_timeout = None,
     dag=dag,
 )
+
+
