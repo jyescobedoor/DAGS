@@ -66,4 +66,4 @@ with DAG('main_dag_with_task_groups',
 
 
     # Configuración del flujo del DAG
-    start_main >> group1 >> pre_main >> end_main
+    start_main >> group1 >> group2 >> pre_main >> end_main
