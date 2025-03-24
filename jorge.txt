@@ -1,2 +1,0 @@
-##comando prueba
-ls -lrt
