@@ -6,22 +6,22 @@ from datetime import datetime
 # Configuraciones del DAG principal
 default_args = {
     'owner': 'airflow',
-    'start_date': datetime(2024, 8, 13),
+    'start_date': datetime(2025, 3, 22),
     'retries': 1,
 }
 
 # Definición del DAG principal
-with DAG('main_dag_with_task_groups',
+with DAG('dag_personal_2025',
          default_args=default_args,
          schedule_interval='@daily',
          catchup=False) as dag:
 
     start_main = DummyOperator(
-        task_id='inicia_malla_ods',
+        task_id='Inicio',
     )
 
     # Creación de un grupo de tareas
-    with TaskGroup("DWHODS_EXT_Catalog") as group1:
+    with TaskGroup("Grupo1") as group1:
         start = DummyOperator(
             task_id='start',
         )
@@ -38,7 +38,7 @@ with DAG('main_dag_with_task_groups',
         start >> process >> end
 
 # Creación de un grupo de tareas
-    with TaskGroup("DWHODS_STG_Catalog") as group2:
+    with TaskGroup("Grupo2") as group2:
         start = DummyOperator(
             task_id='start',
         )
@@ -56,11 +56,11 @@ with DAG('main_dag_with_task_groups',
 
 
     pre_main = DummyOperator(
-        task_id='DWHODS_Adicionales',
+        task_id='Tarea_adicional',
     )
 
     end_main = DummyOperator(
-        task_id='fin_malla_ods',
+        task_id='Tarea_fin',
     )
 
 
