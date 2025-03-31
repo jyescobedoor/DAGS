@@ -24,6 +24,7 @@ with DAG('dag_personal_2025',
     with TaskGroup("Grupo1") as group1:
         start = DummyOperator(
             task_id='start',
+            bash_command="echo inicia la ejecucin del las tareas",
         )
 
         process = DummyOperator(
