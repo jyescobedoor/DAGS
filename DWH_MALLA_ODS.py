@@ -2,6 +2,7 @@ from airflow import DAG
 from airflow.operators.dummy import DummyOperator
 from airflow.utils.task_group import TaskGroup
 from datetime import datetime
+from airflow.operators.bash import BashOperator
 
 # Configuraciones del DAG principal
 default_args = {
@@ -22,9 +23,9 @@ with DAG('dag_personal_2025',
 
     # Creación de un grupo de tareas
     with TaskGroup("Grupo1") as group1:
-        start = DummyOperator(
+        start = BashOperator(
             task_id='start',
-            command="echo inicia la ejecucin del las tareas. ",
+            bash_command="echo inicia la ejecucin del las tareas. ",
         )
 
         process = DummyOperator(
