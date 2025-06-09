@@ -32,7 +32,7 @@ with DAG('DWH_MALLA_ODS',
     Inicio = BashOperator(
         task_id='inicia_malla_ods',
             #ssh_conn_id=ssh_conn_id,
-            command='date;hostname;sleep 60',
+            bash_command='date;hostname;sleep 60',
             ##command='ksh /archivos/Shells/mailiniciomallaods.sh ',
             conn_timeout = None,
             cmd_timeout = None, 
