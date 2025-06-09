@@ -1,7 +1,9 @@
 from datetime import datetime
 import pendulum
 from airflow import DAG
-from airflow.contrib.operators.ssh_operator import SSHOperator
+#from airflow.contrib.operators.ssh_operator import SSHOperator
+from airflow.providers.ssh.operators.ssh import SSHOperator
+from airflow.providers.ssh.hooks.ssh import SSHHook
 from airflow.utils.task_group import TaskGroup
 
 # Instantiate Pendulum and set your timezone.
@@ -20,7 +22,7 @@ default_args = {
 # Definición del DAG principal
 with DAG('DWH_MALLA_ODS',
          default_args=default_args,
-         schedule_interval='00 00 * * *', ##Ejecucion de malla diaria desde las 20:00
+         schedulel='00 00 * * *', ##Ejecucion de malla diaria desde las 20:00
          catchup=False,
          tags=["10.203.34.30", "Malla_ODS","FactorIT"],) as dag:
 
