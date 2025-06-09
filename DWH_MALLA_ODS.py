@@ -1,7 +1,6 @@
 from datetime import datetime
 import pendulum
 from airflow import DAG
-from airflow.operators.empty import EmptyOperator
 #from airflow.contrib.operators.ssh_operator import SSHOperator
 from airflow.providers.ssh.operators.ssh import SSHOperator
 from airflow.providers.ssh.hooks.ssh import SSHHook
@@ -34,8 +33,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 60',
             ##command='ksh /archivos/Shells/mailiniciomallaods.sh ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
     # Creación grupo de tareas
@@ -45,8 +44,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_datadict_item ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G1 = BashOperator(
@@ -54,8 +53,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_dic_channel ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G1 = BashOperator(
@@ -63,8 +62,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_classification ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G1 = BashOperator(
@@ -72,8 +71,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_datadict_item_lang ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G1 = BashOperator(
@@ -81,8 +80,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_dic_invoice_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G1 = BashOperator(
@@ -90,8 +89,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_entity_plan ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G1 = BashOperator(
@@ -99,8 +98,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_employee ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G1 = BashOperator(
@@ -108,8 +107,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_dic_payment_method ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G1 = BashOperator(
@@ -117,8 +116,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_entity_relation ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G1 = BashOperator(
@@ -126,8 +125,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_org ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G1 = BashOperator(
@@ -135,8 +134,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_dic_reason_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G1 = BashOperator(
@@ -144,8 +143,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_offering ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G1 = BashOperator(
@@ -153,8 +152,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_property ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G1 = BashOperator(
@@ -162,8 +161,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_dic_trx_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G1 = BashOperator(
@@ -171,8 +170,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_offering_rental_ctz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G1 = BashOperator(
@@ -180,8 +179,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_region ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G1 = BashOperator(
@@ -189,8 +188,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqncm_charge_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G1 = BashOperator(
@@ -198,8 +197,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_plan ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G1 = BashOperator(
@@ -207,8 +206,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_staff ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G1 = BashOperator(
@@ -216,8 +215,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnfp_logvendedores_final ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G1 = BashOperator(
@@ -225,8 +224,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_plan_simpleprice ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G1 = BashOperator(
@@ -234,8 +233,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bme_languagelocaldisplay ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G1 = BashOperator(
@@ -243,8 +242,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnim_item_sku ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G1 = BashOperator(
@@ -252,8 +251,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_product ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G1 = BashOperator(
@@ -261,8 +260,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bme_publicdatadict ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G1 = BashOperator(
@@ -270,8 +269,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_addr_ref_purpose ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G1 = BashOperator(
@@ -279,8 +278,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_relationtype ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G1 = BashOperator(
@@ -288,8 +287,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_sr_servicerequesttype ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G1 = BashOperator(
@@ -297,8 +296,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_bill_cycle_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G1 = BashOperator(
@@ -306,8 +305,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_target_market_ctz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G1 = BashOperator(
@@ -315,8 +314,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_ss_option ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G1 = BashOperator(
@@ -324,8 +323,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_group ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G1 = BashOperator(
@@ -333,8 +332,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_address ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G1 = BashOperator(
@@ -342,8 +341,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_ss_question ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G1 = BashOperator(
@@ -351,8 +350,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_group_member ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G1 = BashOperator(
@@ -360,8 +359,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_charge_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task37G1 = BashOperator(
@@ -369,8 +368,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_ucp_groupinfo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task38G1 = BashOperator(
@@ -378,8 +377,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_organization ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
         
         #Configuración dependencias tareas grupo1
@@ -394,8 +393,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_datadict_item ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G2 = BashOperator(
@@ -403,8 +402,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_dic_channel ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G2 = BashOperator(
@@ -412,8 +411,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_classification ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G2 = BashOperator(
@@ -421,8 +420,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_datadict_item_lang ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G2 = BashOperator(
@@ -430,8 +429,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_dic_invoice_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G2 = BashOperator(
@@ -439,8 +438,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_entity_plan ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G2 = BashOperator(
@@ -448,8 +447,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_employee ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G2 = BashOperator(
@@ -457,8 +456,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_dic_payment_method ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G2 = BashOperator(
@@ -466,8 +465,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_entity_relation ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G2 = BashOperator(
@@ -475,8 +474,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_org ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G2 = BashOperator(
@@ -484,8 +483,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_dic_reason_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G2 = BashOperator(
@@ -493,8 +492,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_offering ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G2 = BashOperator(
@@ -502,8 +501,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_property ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G2 = BashOperator(
@@ -511,8 +510,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_dic_trx_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G2 = BashOperator(
@@ -520,8 +519,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_offering_rental_ctz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G2 = BashOperator(
@@ -529,8 +528,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_region ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G2 = BashOperator(
@@ -538,8 +537,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqncm_charge_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G2 = BashOperator(
@@ -547,8 +546,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_plan ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G2 = BashOperator(
@@ -556,8 +555,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_staff ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G2 = BashOperator(
@@ -565,8 +564,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnfp_logvendedores_final ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G2 = BashOperator(
@@ -574,8 +573,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_plan_simpleprice ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G2 = BashOperator(
@@ -583,8 +582,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bme_languagelocaldisplay ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G2 = BashOperator(
@@ -592,8 +591,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnim_item_sku ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G2 = BashOperator(
@@ -601,8 +600,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_product ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G2 = BashOperator(
@@ -610,8 +609,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bme_publicdatadict ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G2 = BashOperator(
@@ -619,8 +618,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_addr_ref_purpose ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G2 = BashOperator(
@@ -628,8 +627,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_relationtype ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G2 = BashOperator(
@@ -637,8 +636,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_sr_servicerequesttype ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G2 = BashOperator(
@@ -646,8 +645,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_bill_cycle_type ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G2 = BashOperator(
@@ -655,8 +654,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_target_market_ctz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G2 = BashOperator(
@@ -664,8 +663,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_ss_option ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G2 = BashOperator(
@@ -673,8 +672,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_group ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G2 = BashOperator(
@@ -682,8 +681,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_address ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G2 = BashOperator(
@@ -691,8 +690,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_ss_question ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G2 = BashOperator(
@@ -700,8 +699,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_group_member ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G2 = BashOperator(
@@ -709,8 +708,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_charge_code ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task37G2 = BashOperator(
@@ -718,8 +717,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_ucp_groupinfo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task38G2 = BashOperator(
@@ -727,8 +726,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_organization ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
     # Creación grupo de tareas
@@ -738,8 +737,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_distribucion_recaudo_anulado ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G3 = BashOperator(
@@ -747,8 +746,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_banco ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G3 = BashOperator(
@@ -756,8 +755,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_factura_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G3 = BashOperator(
@@ -765,8 +764,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_caracteristica_cus ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G3 = BashOperator(
@@ -774,8 +773,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_factura_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G3 = BashOperator(
@@ -783,8 +782,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cartera_cuenta_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G3 = BashOperator(
@@ -792,8 +791,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G3 = BashOperator(
@@ -801,8 +800,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_causa_cargo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G3 = BashOperator(
@@ -810,8 +809,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_impuesto_cuota_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G3 = BashOperator(
@@ -819,8 +818,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cg_ref_codes ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G3 = BashOperator(
@@ -828,8 +827,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_impuesto_distribucion_reca_anu ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G3 = BashOperator(
@@ -837,8 +836,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_ciclo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G3 = BashOperator(
@@ -846,8 +845,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_impuesto_factura_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G3 = BashOperator(
@@ -855,8 +854,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_ciudad ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G3 = BashOperator(
@@ -864,8 +863,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_periodo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G3 = BashOperator(
@@ -873,8 +872,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cliente ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G3 = BashOperator(
@@ -882,8 +881,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_periodo_facturacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G3 = BashOperator(
@@ -891,8 +890,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_concepto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G3 = BashOperator(
@@ -900,8 +899,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_plan_tarifario ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G3 = BashOperator(
@@ -909,8 +908,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_contacto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G3 = BashOperator(
@@ -918,8 +917,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G3 = BashOperator(
@@ -927,8 +926,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G3 = BashOperator(
@@ -936,8 +935,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_recaudo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G3 = BashOperator(
@@ -945,8 +944,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G3 = BashOperator(
@@ -954,8 +953,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_referencia ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G3 = BashOperator(
@@ -963,8 +962,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cuenta_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G3 = BashOperator(
@@ -972,8 +971,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_region ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G3 = BashOperator(
@@ -981,8 +980,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_cuota_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G3 = BashOperator(
@@ -990,8 +989,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_segmentacion_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G3 = BashOperator(
@@ -999,8 +998,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_departamento_geografico ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G3 = BashOperator(
@@ -1008,8 +1007,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_sucursal_banco ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G3 = BashOperator(
@@ -1017,8 +1016,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_detalle_castigo_cartera ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G3 = BashOperator(
@@ -1026,8 +1025,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_telefono_x_cus ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G3 = BashOperator(
@@ -1035,8 +1034,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_detalle_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G3 = BashOperator(
@@ -1044,8 +1043,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_tipo_impuesto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G3 = BashOperator(
@@ -1053,8 +1052,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_detalle_tipo_impuesto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task37G3 = BashOperator(
@@ -1062,8 +1061,8 @@ with DAG('DWH_MALLA_ODS',
             bash_command='date;hostname;sleep 15',
             #ssh_conn_id=ssh_conn_id,
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_tipo_moneda ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         #Configuración dependencias tareas grupo3
@@ -1077,8 +1076,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G4 = BashOperator(
@@ -1086,8 +1085,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_factura_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G4 = BashOperator(
@@ -1095,8 +1094,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_factura_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G4 = BashOperator(
@@ -1104,8 +1103,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_detalle_tipo_impuesto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G4 = BashOperator(
@@ -1113,8 +1112,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_tipo_moneda ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G4 = BashOperator(
@@ -1122,8 +1121,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_tipo_impuesto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G4 = BashOperator(
@@ -1131,8 +1130,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_telefono_x_cus ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G4 = BashOperator(
@@ -1140,8 +1139,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_sucursal_banco ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G4 = BashOperator(
@@ -1149,8 +1148,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_segmentacion_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G4 = BashOperator(
@@ -1158,8 +1157,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_region ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G4 = BashOperator(
@@ -1167,8 +1166,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_referencia ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G4 = BashOperator(
@@ -1176,8 +1175,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_recaudo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G4 = BashOperator(
@@ -1185,8 +1184,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G4 = BashOperator(
@@ -1194,8 +1193,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_plan_tarifario ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G4 = BashOperator(
@@ -1203,8 +1202,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_periodo_facturacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G4 = BashOperator(
@@ -1212,8 +1211,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_prldavox_periodo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G4 = BashOperator(
@@ -1221,8 +1220,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_impuesto_factura_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G4 = BashOperator(
@@ -1230,8 +1229,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_impuesto_distribucion_reca_anu ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G4 = BashOperator(
@@ -1239,8 +1238,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_impuesto_cuota_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G4 = BashOperator(
@@ -1248,8 +1247,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_distribucion_recaudo_anulado ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G4 = BashOperator(
@@ -1257,8 +1256,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_detalle_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G4 = BashOperator(
@@ -1266,8 +1265,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_detalle_castigo_cartera ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G4 = BashOperator(
@@ -1275,8 +1274,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_departamento_geografico ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G4 = BashOperator(
@@ -1284,8 +1283,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cuota_financiacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G4 = BashOperator(
@@ -1293,8 +1292,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cuenta_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G4 = BashOperator(
@@ -1302,8 +1301,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G4 = BashOperator(
@@ -1311,8 +1310,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_contrato ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G4 = BashOperator(
@@ -1320,8 +1319,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_contacto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G4 = BashOperator(
@@ -1329,8 +1328,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_concepto ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G4 = BashOperator(
@@ -1338,8 +1337,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cliente ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G4 = BashOperator(
@@ -1347,8 +1346,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_ciudad ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G4 = BashOperator(
@@ -1356,8 +1355,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_ciclo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G4 = BashOperator(
@@ -1365,8 +1364,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cg_ref_codes ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G4 = BashOperator(
@@ -1374,8 +1373,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_davox_causa_cargo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G4 = BashOperator(
@@ -1383,8 +1382,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_cartera_cuenta_proveedor ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G4 = BashOperator(
@@ -1392,8 +1391,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_caracteristica_cus ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task37G4 = BashOperator(
@@ -1401,8 +1400,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_banco ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
  
     # Creación grupo de tareas
@@ -1413,8 +1412,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G5 = BashOperator(
@@ -1422,8 +1421,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_sr_servicerequest_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G5 = BashOperator(
@@ -1431,8 +1430,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_payment_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G5 = BashOperator(
@@ -1440,8 +1439,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_pbh_problemactivity_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G5 = BashOperator(
@@ -1449,8 +1448,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_adjustment_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G5 = BashOperator(
@@ -1458,8 +1457,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bpm_interface_info_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G5 = BashOperator(
@@ -1467,8 +1466,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bpm_form_info_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G5 = BashOperator(
@@ -1476,8 +1475,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_item_his_vertical_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G5 = BashOperator(
@@ -1485,8 +1484,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_subs_drop_reason_ex_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G5 = BashOperator(
@@ -1494,8 +1493,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_legalization_cz_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G5 = BashOperator(
@@ -1503,8 +1502,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_pbh_problemprocess_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G5 = BashOperator(
@@ -1512,8 +1511,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_apply_detail_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G5 = BashOperator(
@@ -1521,8 +1520,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_line_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G5 = BashOperator(
@@ -1530,8 +1529,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_subscriber_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G5 = BashOperator(
@@ -1539,8 +1538,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_offering_inst_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G5 = BashOperator(
@@ -1548,8 +1547,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_pbh_problemworkitem_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G5 = BashOperator(
@@ -1557,8 +1556,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_credit_balance_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G5 = BashOperator(
@@ -1566,8 +1565,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsr_contact_log_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G5 = BashOperator(
@@ -1575,8 +1574,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_ext_node_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 #####################Job onice en autoys
         #TaskXGX = BashOperator(
@@ -1584,8 +1583,8 @@ with DAG('DWH_MALLA_ODS',
         #    ##ssh_conn_id=ssh_conn_id,
         #    bash_bash_command='date;hostname;sleep 15',
         #    CAFksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_prod_inst_his_period ',
-        #    conn_timeout = None,
-        #    cmd_timeout = None, 
+        #    #conn_timeout = None,
+        #    #cmd_timeout = None, 
         #)
 
         Task20G5 = BashOperator(
@@ -1593,8 +1592,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsr_reception_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G5 = BashOperator(
@@ -1602,8 +1601,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_invoice_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         # Configuración del flujo del grupo de tareas
@@ -1621,8 +1620,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G6 = BashOperator(
@@ -1630,8 +1629,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_prlt_sr_servicerequest ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G6 = BashOperator(
@@ -1639,8 +1638,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_payment ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G6 = BashOperator(
@@ -1648,8 +1647,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_pbh_problemactivity ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G6 = BashOperator(
@@ -1657,8 +1656,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_adjustment ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G6 = BashOperator(
@@ -1666,8 +1665,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_prlt_bpm_interface_info ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G6 = BashOperator(
@@ -1675,8 +1674,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bpm_form_info ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G6 = BashOperator(
@@ -1684,8 +1683,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_item_his_vertical ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G6 = BashOperator(
@@ -1693,8 +1692,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_subs_drop_reason_ex ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G6 = BashOperator(
@@ -1702,8 +1701,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_legalization_cz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G6 = BashOperator(
@@ -1711,8 +1710,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_pbh_problemprocess ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G6 = BashOperator(
@@ -1720,8 +1719,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_apply_detail ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G6 = BashOperator(
@@ -1729,8 +1728,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_line_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G6 = BashOperator(
@@ -1738,8 +1737,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_subscriber_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G6 = BashOperator(
@@ -1747,8 +1746,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_offering_inst_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G6 = BashOperator(
@@ -1756,8 +1755,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_pbh_problemworkitem ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G6 = BashOperator(
@@ -1765,8 +1764,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_credit_balance ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G6 = BashOperator(
@@ -1774,8 +1773,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsr_contact_log ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G6 = BashOperator(
@@ -1783,8 +1782,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_ext_node_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G6 = BashOperator(
@@ -1792,8 +1791,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsr_reception ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 #####################Job onice en autoys
         #TaskXGX = BashOperator(
@@ -1801,8 +1800,8 @@ with DAG('DWH_MALLA_ODS',
         #    ##ssh_conn_id=ssh_conn_id,
         #    bash_bash_command='date;hostname;sleep 15',
         #CAFksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_prod_inst_his ',
-        #   conn_timeout = None,
-        #   cmd_timeout = None, 
+        #   #conn_timeout = None,
+        #   #cmd_timeout = None, 
         #)
 
         Task21G6 = BashOperator(
@@ -1810,8 +1809,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_invoice ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
     # Creación grupo de tareas
@@ -1822,8 +1821,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_item ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G7 = BashOperator(
@@ -1831,8 +1830,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_acct_bill_cycle ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G7 = BashOperator(
@@ -1840,8 +1839,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_subscriber ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G7 = BashOperator(
@@ -1849,8 +1848,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnar_invoice_detail_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G7 = BashOperator(
@@ -1858,8 +1857,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_address ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G7 = BashOperator(
@@ -1867,8 +1866,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_item_his_period ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G7 = BashOperator(
@@ -1876,8 +1875,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_addr_reference ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G7 = BashOperator(
@@ -1885,8 +1884,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_offering_inst ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G7 = BashOperator(
@@ -1894,8 +1893,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndebt_collection_detail ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G7 = BashOperator(
@@ -1903,8 +1902,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_item_vertical ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G7 = BashOperator(
@@ -1912,8 +1911,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnbc_acct ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G7 = BashOperator(
@@ -1921,8 +1920,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_offering_prop ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G7 = BashOperator(
@@ -1930,8 +1929,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_line ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G7 = BashOperator(
@@ -1939,8 +1938,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnbc_customer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G7 = BashOperator(
@@ -1948,8 +1947,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_party_certificate ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G7 = BashOperator(
@@ -1957,8 +1956,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnpm_entity_attr ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G7 = BashOperator(
@@ -1966,8 +1965,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnbc_subscriber ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G7 = BashOperator(
@@ -1975,8 +1974,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_operation_reason_his_cz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G7 = BashOperator(
@@ -1984,8 +1983,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnremedy_bi_bitacora ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G7 = BashOperator(
@@ -1993,8 +1992,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_detalle_factura_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G7 = BashOperator(
@@ -2002,8 +2001,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G7 = BashOperator(
@@ -2011,8 +2010,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnremedy_bi_cerrados_dia_anterior ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G7 = BashOperator(
@@ -2020,8 +2019,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndavox_impuesto_detalle_fac_cue ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G7 = BashOperator(
@@ -2029,8 +2028,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnom_order_ext_node ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G7 = BashOperator(
@@ -2038,8 +2037,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnremedy_bi_pendientes_dia ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G7 = BashOperator(
@@ -2047,8 +2046,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqndebt_collection ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G7 = BashOperator(
@@ -2056,8 +2055,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsr_contact_reason ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G7 = BashOperator(
@@ -2065,8 +2064,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnsys_employee_attr ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G7 = BashOperator(
@@ -2074,8 +2073,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bpm_serviceim_cpe_accountid ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G7 = BashOperator(
@@ -2083,8 +2082,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bpm_serviceim_cpe_info ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G7 = BashOperator(
@@ -2092,8 +2091,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_bpm_serviceim_cpeid ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G7 = BashOperator(
@@ -2101,8 +2100,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqnt_ss_questionanswer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G7 = BashOperator(
@@ -2110,8 +2109,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_account ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G7 = BashOperator(
@@ -2119,8 +2118,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_bill_medium ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G7 = BashOperator(
@@ -2128,8 +2127,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_contact ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G7 = BashOperator(
@@ -2137,8 +2136,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_customer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task37G7 = BashOperator(
@@ -2146,8 +2145,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_entity_attr_ex ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task38G7 = BashOperator(
@@ -2155,8 +2154,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhext_sqninf_individual ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         ##Configuración dependencias tareas grupo7
@@ -2181,8 +2180,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_item_vertical ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G8 = BashOperator(
@@ -2190,8 +2189,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndebt_collection ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G8 = BashOperator(
@@ -2199,8 +2198,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_acct_bill_cycle ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G8 = BashOperator(
@@ -2208,8 +2207,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_subscriber ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G8 = BashOperator(
@@ -2217,8 +2216,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnar_invoice_detail ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G8 = BashOperator(
@@ -2226,8 +2225,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_line ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G8 = BashOperator(
@@ -2235,8 +2234,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_account ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G8 = BashOperator(
@@ -2244,8 +2243,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_addr_reference ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G8 = BashOperator(
@@ -2253,8 +2252,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_operation_reason_his_cz ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G8 = BashOperator(
@@ -2262,8 +2261,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnpm_entity_attr ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G8 = BashOperator(
@@ -2271,8 +2270,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_prlinf_bill_medium ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G8 = BashOperator(
@@ -2280,8 +2279,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnbc_acct ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G8 = BashOperator(
@@ -2289,8 +2288,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G8 = BashOperator(
@@ -2298,8 +2297,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnremedy_bi_bitacora ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G8 = BashOperator(
@@ -2307,8 +2306,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_contact ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G8 = BashOperator(
@@ -2316,8 +2315,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnbc_customer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G8 = BashOperator(
@@ -2325,8 +2324,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_ext_node ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G8 = BashOperator(
@@ -2334,8 +2333,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnremedy_bi_cerrados_dia_anterior ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G8 = BashOperator(
@@ -2343,8 +2342,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_customer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task20G8 = BashOperator(
@@ -2352,8 +2351,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnbc_subscriber ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task21G8 = BashOperator(
@@ -2361,8 +2360,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_item ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task22G8 = BashOperator(
@@ -2370,8 +2369,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnremedy_bi_pendientes_dia ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task23G8 = BashOperator(
@@ -2379,8 +2378,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_entity_attr_ex ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task24G8 = BashOperator(
@@ -2388,8 +2387,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_detalle_factura_cuenta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task25G8 = BashOperator(
@@ -2397,8 +2396,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnom_order_item_his ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task26G8 = BashOperator(
@@ -2406,8 +2405,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsr_contact_reason ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task27G8 = BashOperator(
@@ -2415,8 +2414,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_individual ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task28G8 = BashOperator(
@@ -2424,8 +2423,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqndavox_impuesto_detalle_fac_cue ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task29G8 = BashOperator(
@@ -2433,8 +2432,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_offering_inst ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task30G8 = BashOperator(
@@ -2442,8 +2441,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnsys_employee_attr ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task31G8 = BashOperator(
@@ -2451,8 +2450,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_offering_prop ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task32G8 = BashOperator(
@@ -2460,8 +2459,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bpm_serviceim_cpe_accountid ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task33G8 = BashOperator(
@@ -2469,8 +2468,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqninf_party_certificate ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task34G8 = BashOperator(
@@ -2478,8 +2477,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bpm_serviceim_cpe_info ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task35G8 = BashOperator(
@@ -2487,8 +2486,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_bpm_serviceim_cpeid ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task36G8 = BashOperator(
@@ -2496,8 +2495,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhstg_sqnt_ss_questionanswer ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         #Configuración dependencias tareas grupo8
@@ -2515,8 +2514,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_clientes ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task2G9 = BashOperator(
@@ -2524,8 +2523,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_suscripciones ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task3G9 = BashOperator(
@@ -2533,8 +2532,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_cuentas ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task4G9 = BashOperator(
@@ -2542,8 +2541,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_parque ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task5G9 = BashOperator(
@@ -2551,8 +2550,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_reclamos ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task6G9 = BashOperator(
@@ -2560,8 +2559,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_recaudo ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task7G9 = BashOperator(
@@ -2569,8 +2568,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_peticiones ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task8G9 = BashOperator(
@@ -2578,8 +2577,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_planta ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task9G9 = BashOperator(
@@ -2587,8 +2586,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_contactos ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task10G9 = BashOperator(
@@ -2596,8 +2595,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_instalaciones ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task11G9 = BashOperator(
@@ -2605,8 +2604,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_facturacion ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task12G9 = BashOperator(
@@ -2614,8 +2613,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_averias ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task13G9 = BashOperator(
@@ -2623,8 +2622,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_altas ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task14G9 = BashOperator(
@@ -2632,8 +2631,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_bajas ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task15G9 = BashOperator(
@@ -2641,8 +2640,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_migraciones ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task16G9 = BashOperator(
@@ -2650,8 +2649,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_svas ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task17G9 = BashOperator(
@@ -2659,8 +2658,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_ajustes ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task18G9 = BashOperator(
@@ -2668,8 +2667,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_bandejas ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         Task19G9 = BashOperator(
@@ -2677,8 +2676,8 @@ with DAG('DWH_MALLA_ODS',
             #ssh_conn_id=ssh_conn_id,
             bash_command='date;hostname;sleep 15',
             ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion dwhsp_ds_cartera ',
-            conn_timeout = None,
-            cmd_timeout = None, 
+            #conn_timeout = None,
+            #cmd_timeout = None, 
         )
 
         #Configuración dependencias tareas grupo9
@@ -2694,8 +2693,8 @@ with DAG('DWH_MALLA_ODS',
         #ssh_conn_id=ssh_conn_id,
         bash_command='date;hostname;sleep 15',
         ##command='ksh /archivos/Shells/DS_RunJob_Airflow.sh Produccion DWHODS_Adicionales ',
-        conn_timeout = None,
-        cmd_timeout = None, 
+        #conn_timeout = None,
+        #cmd_timeout = None, 
         )
 
     Fin = BashOperator(
@@ -2703,8 +2702,8 @@ with DAG('DWH_MALLA_ODS',
         #ssh_conn_id=ssh_conn_id,
         bash_command='date;hostname;sleep 15',
         ##command='ksh /archivos/Shells/mailfinmallaods.sh ',
-        conn_timeout = None,
-        cmd_timeout = None, 
+        #conn_timeout = None,
+        #cmd_timeout = None, 
         )
 
     # Configuración dependencias flujo del DAG
