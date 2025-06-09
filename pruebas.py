@@ -14,7 +14,7 @@ with DAG('jorge_prueba',
          catchup=False) as dag:
 
 
-    start_main = DummyOperator(
+    start_main = EmptyOperator(
         task_id='Inicio',
     )
 
