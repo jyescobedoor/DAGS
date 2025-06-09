@@ -10,7 +10,7 @@ default_args = {
 # Definición del DAG principal
 with DAG('jorge_prueba',
          default_args=default_args,
-         schedule_interval='@daily',
+         schedule='@daily',
          catchup=False) as dag:
 
 
