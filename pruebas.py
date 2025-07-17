@@ -44,4 +44,5 @@ with DAG('jorge_prueba',
     # Establecer dependencias entre tareas específicas de diferentes grupos
     start_main >> task1_1 >> task2_1 >> task3_1
     task1_2 >> task2_2 >> task3_2
-    group3 >> end_main >> pre_main
+    group3 >> end_main
+    pre_main
