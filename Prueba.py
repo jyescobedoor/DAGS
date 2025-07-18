@@ -11,6 +11,7 @@ default_args = {
 with DAG('Dags_grupos',
          default_args=default_args,
          schedule='@daily',
+         tags=["Rolo1","Facturacion","Roles"],
          catchup=False) as dag:
 
 
