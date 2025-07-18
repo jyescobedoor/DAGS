@@ -26,7 +26,7 @@ with DAG('DWH_MALLA_ODS',
          default_args=default_args,
          schedule='00 00 * * *', ##Ejecucion de malla diaria desde las 20:00
          catchup=False,
-         tags=["10.203.34.30", "Malla_ODS","FactorIT"],) as dag:
+         tags=["Rolo1","Facturacion","Roles"],) as dag:
 
     Inicio = BashOperator(
         task_id='inicia_malla_ods',
