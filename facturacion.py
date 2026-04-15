@@ -4,7 +4,7 @@ from airflow import DAG
 #from airflow.contrib.operators.ssh_operator import SSHOperator
 from airflow.providers.ssh.operators.ssh import SSHOperator
 from airflow.providers.ssh.hooks.ssh import SSHHook
-from airflow.providers.standard.operators.python.PythonOperator
+from airflow.providers.standard.operators.python.PythonOperator import PythonOperator
 from airflow.providers.standard.operators.bash.BashOperator
 from airflow.sdk.TaskGroup
 
