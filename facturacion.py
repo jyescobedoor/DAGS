@@ -4,9 +4,9 @@ from airflow import DAG
 #from airflow.contrib.operators.ssh_operator import SSHOperator
 from airflow.providers.ssh.operators.ssh import SSHOperator
 from airflow.providers.ssh.hooks.ssh import SSHHook
-from airflow.providers.standard.operators.python.PythonOperator import PythonOperator
-from airflow.providers.standard.operators.bash.BashOperator import BashOperator
-from airflow.sdk.TaskGroup import TaskGroup
+from airflow.operators.python import PythonOperator
+from airflow.operators.bash import BashOperator
+from airflow.utils.task_group import TaskGroup
 
 # Instantiate Pendulum and set your timezone.
 local_tz = pendulum.timezone("America/Bogota")
